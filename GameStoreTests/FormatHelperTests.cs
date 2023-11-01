@@ -24,33 +24,33 @@ namespace GameStoreTests
         [TestMethod]
         public void FormatMoney_PositiveInteger()
         {
-            decimal price = 1000;
+            decimal price = 500;
             string formatted = FormatHelper.FormatMoney(price);
-            Assert.AreEqual("1000.00", formatted);
+            Assert.AreEqual("500.00", formatted);
         }
 
         [TestMethod]
         public void FormatMoney_NegativeInteger()
         {
-            decimal price = -1000;
+            decimal price = -500;
             string formatted = FormatHelper.FormatMoney(price);
-            Assert.AreEqual("-1000.00", formatted);
+            Assert.AreEqual("-500.00", formatted);
         }
 
         [TestMethod]
         public void FormatMoney_PositiveDecimal()
         {
-            decimal price = 1234.56m;
+            decimal price = 234.56m;
             string formatted = FormatHelper.FormatMoney(price);
-            Assert.AreEqual("1234.56", formatted);
+            Assert.AreEqual("234.56", formatted);
         }
 
         [TestMethod]
         public void FormatMoney_NegativeDecimal()
         {
-            decimal price = -1234.56m;
+            decimal price = -234.56m;
             string formatted = FormatHelper.FormatMoney(price);
-            Assert.AreEqual("-1234.56", formatted);
+            Assert.AreEqual("-234.56", formatted);
         }
 
         [TestMethod]
@@ -70,11 +70,27 @@ namespace GameStoreTests
         }
 
         [TestMethod]
+        public void FormatMoney_ThousandsSeparatorPositive()
+        {
+            decimal price = 12345.67m;
+            string formatted = FormatHelper.FormatMoney(price);
+            Assert.AreEqual("12,345.67", formatted);
+        }
+
+        [TestMethod]
+        public void FormatMoney_ThousandsSeparatorNegative()
+        {
+            decimal price = -12345.67m;
+            string formatted = FormatHelper.FormatMoney(price);
+            Assert.AreEqual("-12,345.67", formatted);
+        }
+
+        [TestMethod]
         public void FormatMoney_MaxValue()
         {
             decimal price = decimal.MaxValue;
             string formatted = FormatHelper.FormatMoney(price);
-            Assert.AreEqual("79228162514264337593543950335.00", formatted);
+            Assert.AreEqual("79,228,162,514,264,337,593,543,950,335.00", formatted);
         }
 
         [TestMethod]
@@ -82,7 +98,7 @@ namespace GameStoreTests
         {
             decimal price = decimal.MinValue;
             string formatted = FormatHelper.FormatMoney(price);
-            Assert.AreEqual("-79228162514264337593543950335.00", formatted);
+            Assert.AreEqual("-79,228,162,514,264,337,593,543,950,335.00", formatted);
         }
     }
 }

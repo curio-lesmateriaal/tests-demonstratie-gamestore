@@ -11,11 +11,14 @@ Deze repository is bedoeld om te demonstreren hoe je geautomatiseerde tests kunt
 
 1. Clone deze repository
 2. Open de solution in Visual Studio
-3. Build de solution
-4. Maak de Test Explorer zichtbaar: `Test` > `Test Explorer`
-5. Run alle tests: `Test Explorer` > `Run All Tests In View` (twee groene driehoekjes links bovenin de Test Explorer)
+3. Start you MySQL database
+4. Controleer of de connection string in `AppDbContext.cs` klopt met jouw database
+5. Build de solution
+6. Maak de Test Explorer zichtbaar: `Test` > `Test Explorer`
+7. Run alle tests: `Test Explorer` > `Run All Tests In View` (twee groene driehoekjes links bovenin de Test Explorer)
 
-Als het goed is slagen alle tests.
+Als het goed is slagen de meeste tests, op 4 na:
+![Een overzicht van test resultaten waarbij er 4 niet slagen](./Docs/Eerste%20Test%20Resultaten.png)
 
 ## Hoe het Test Project is aangemaakt
 
@@ -45,7 +48,9 @@ Je kunt de tests nu vinden in `GameStoreTests/FormatHelperTests.cs`. Dit is hoe 
 
 1. We maken de test-klasse. Geef iedere klasse een eigen test bestand. Een mooie conventie om af te spreken is dat je de test noemt: {NaamVanDeKlasse}Tests.cs. *Bijvoorbeeld: `FormatHelperTests.cs`.*
 
-2. Bedenk en schrijf een eerste simpele test, bijvoorbeeld:
+2. Maak de klasse `public`, zodat de MSTest Test Runner de klasse kan vinden en de tests erin kan uitvoeren.
+
+3. Bedenk en schrijf een eerste simpele test, bijvoorbeeld:
 ```csharp
 [TestClass]
 public class FormatHelperTests
@@ -60,7 +65,7 @@ public class FormatHelperTests
 }
 ```
 
-3. Voer de test uit via de Test Explorer.
+4. Voer de test uit via de Test Explorer.
 
 De test slaagt. Maar we willen ook testen of de methode werkt voor andere situaties. Dus voegen we meer tests toe.
 
