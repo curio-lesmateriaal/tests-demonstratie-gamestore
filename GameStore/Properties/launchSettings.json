@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "GameStore (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "GameStore (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
