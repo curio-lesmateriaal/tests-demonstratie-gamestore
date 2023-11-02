@@ -9,13 +9,15 @@ Deze repository is bedoeld om te demonstreren hoe je geautomatiseerde tests kunt
 
 ## Opstarten
 
-1. Clone deze repository
-2. Open de solution in Visual Studio
-3. Start you MySQL database
-4. Controleer of de connection string in `AppDbContext.cs` klopt met jouw database
-5. Build de solution
-6. Maak de Test Explorer zichtbaar: `Test` > `Test Explorer`
-7. Run alle tests: `Test Explorer` > `Run All Tests In View` (twee groene driehoekjes links bovenin de Test Explorer)
+1. Installeer eerst de juiste SDK die nodig is om WinUI 3 projecten te testen:
+![image](./Docs/1%20Installeer%20de%20juiste%20SDK.png)
+2. Clone deze repository
+3. Open de solution in Visual Studio
+4. Start you MySQL database
+5. Controleer of de connection string in `AppDbContext.cs` klopt met jouw database
+6. Build de solution
+7. Maak de Test Explorer zichtbaar: `Test` > `Test Explorer`
+8. Run alle tests: `Test Explorer` > `Run All Tests In View` (twee groene driehoekjes links bovenin de Test Explorer)
 
 Als het goed is slagen de meeste tests, op 4 na:
 ![Een overzicht van test resultaten waarbij er 4 niet slagen](./Docs/Eerste%20Test%20Resultaten.png)
