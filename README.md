@@ -33,10 +33,12 @@ Als het goed is slagen de meeste tests, op 4 na:
 3. Pas de eigenschappen van het Test Project aan, zodat deze dezelfde OS Target heeft als je WinUI 3 project:
 ![image](./Docs/3%20Kies%20voor%20het%20Test%20Project%20dezelfde%20OS%20target%20als%20main%20project.png)
 
-4. Om de tests toegang te geven tot code in je WinUI 3 project, moet je een referentie toevoegen naar het WinUI 3 project:
+4. Verander in de Properties van het test project onder `Build` > `General` de `Platform Target` naar `x64` (hetzelfde als bij het project wat getest wordt)
+
+5. Om de tests toegang te geven tot code in je WinUI 3 project, moet je een referentie toevoegen naar het WinUI 3 project:
 ![image](./Docs/4%20Voeg%20een%20Reference%20aan%20het%20main%20project%20toe%20vanuit%20het%20test%20project.png)
 
-5. Nu kun je tests schrijven:
+6. Nu kun je tests schrijven:
 
   - Iedere test klasse moet de `[TestClass]` attribuut hebben. Iedere test methode moet de `[TestMethod]` attribuut hebben. *Zie de `FormatHelperTests` klasse voor voorbeelden.*
 
